@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../utils/colors';
-import {dynamicSize} from '../../utils/dimension.style';
+import {dynamicSize, getFontSize} from '../../utils/dimension.style';
+import {fonts} from '../../utils/font';
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,5 +17,45 @@ export const styles = StyleSheet.create({
   },
   passwordInputContainer: {
     marginTop: dynamicSize(16),
+  },
+  forgotPassword: {
+    fontFamily: fonts.jostSemiBold,
+    color: colors.mauve,
+    fontSize: getFontSize(16),
+    textAlign: 'right',
+    marginTop: dynamicSize(14),
+  },
+  loginButtonContainer: {
+    marginTop: dynamicSize(50),
+  },
+  orBtn: {
+    fontFamily: fonts.jostSemiBold,
+    color: colors.mauve,
+    fontSize: getFontSize(16),
+    textAlign: 'center',
+    marginVertical: dynamicSize(16),
+  },
+  socialIconsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  doYouHave: {
+    color: colors.mauve,
+    fontSize: getFontSize(16),
+    fontFamily: fonts.jostSemiBold,
+  },
+  signupBtn: {
+    color: colors.orange,
+    fontFamily: fonts.jostSemiBold,
+    fontSize: getFontSize(16),
+    textDecorationLine: 'underline',
+  },
+  scrollViewContainer: {
+    flexGrow: 1,
+    justifyContent: 'space-between',
   },
 });
