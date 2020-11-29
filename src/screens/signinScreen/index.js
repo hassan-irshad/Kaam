@@ -17,8 +17,12 @@ import RectangularButton from '../../components/rectangularButton';
 import facebookIcon from '../../assets/images/facebookIcon/facebookIcon.png';
 import twitterIcon from '../../assets/images/twitterIcon/twitterIcon.png';
 import linkedinIcon from '../../assets/images/linkedinIcon/linkedinIcon.png';
+import RouteNames from '../../RouteNames';
 
-export default function SigninScreen() {
+export default function SigninScreen({navigation}) {
+  const navigateToSignup = () => {
+    navigation.navigate(RouteNames.SignupScreen);
+  };
   return (
     <>
       <StatusBar />
@@ -54,7 +58,7 @@ export default function SigninScreen() {
               </TouchableOpacity>
             </View>
           </View>
-          <TouchableOpacity style={styles.row}>
+          <TouchableOpacity style={styles.row} onPress={navigateToSignup}>
             <Text style={styles.doYouHave}>Do you have an account? </Text>
             <Text style={styles.signupBtn}>Sign Up</Text>
           </TouchableOpacity>
