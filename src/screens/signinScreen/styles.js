@@ -12,5 +12,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: dynamicSize(59),
+    marginBottom: dynamicSize(50),
   },
 });
