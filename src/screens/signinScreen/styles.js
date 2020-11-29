@@ -14,4 +14,7 @@ export const styles = StyleSheet.create({
     marginTop: dynamicSize(59),
     marginBottom: dynamicSize(50),
   },
+  passwordInputContainer: {
+    marginTop: dynamicSize(16),
+  },
 });

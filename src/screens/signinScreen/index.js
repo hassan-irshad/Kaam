@@ -4,6 +4,7 @@ import Header from '../../components/header';
 import {styles} from './styles';
 import signInIllustration from '../../assets/images/signinIllustration/illustration.png';
 import TextInput from '../../components/textInput';
+import PasswordInput from '../../components/passwordInput';
 
 export default function SigninScreen() {
   return (
@@ -18,6 +19,9 @@ export default function SigninScreen() {
             </View>
             <View>
               <TextInput placeholder="Username" />
+            </View>
+            <View style={styles.passwordInputContainer}>
+              <PasswordInput placeholder="Password" />
             </View>
           </View>
         </ScrollView>
