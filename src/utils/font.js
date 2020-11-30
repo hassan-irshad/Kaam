@@ -4,4 +4,5 @@ export const fonts = {
   jostMedium: 'Jost-Medium',
   jostSemiBold: 'Jost-SemiBold',
   jostThin: 'Jost-Thin',
+  ubuntuMedium: 'Ubuntu-Medium',
 };
