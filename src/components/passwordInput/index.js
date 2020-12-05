@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bugle,
     fontFamily: fonts.jostRegular,
     fontSize: getFontSize(16),
-    letterSpacing: dynamicSize(0.4),
+    letterSpacing: 0.4,
     color: colors.caparol,
     paddingHorizontal: dynamicSize(22),
     paddingVertical: dynamicSize(21),

@@ -26,8 +26,10 @@ export default function SigninScreen({navigation}) {
   return (
     <>
       <StatusBar />
-      <SafeAreaView style={styles.container}>
-        <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+      <SafeAreaView style={[styles.container, styles.paddingHorizontal]}>
+        <ScrollView
+          contentContainerStyle={styles.scrollViewContainer}
+          showsVerticalScrollIndicator={false}>
           <View style={styles.container}>
             <Header title="Sign In" />
             <View style={styles.imageContainer}>

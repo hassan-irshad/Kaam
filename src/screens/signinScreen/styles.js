@@ -6,8 +6,11 @@ import {fonts} from '../../utils/font';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: dynamicSize(30),
     backgroundColor: colors.white,
+    paddingTop: dynamicSize(5),
+  },
+  paddingHorizontal: {
+    paddingHorizontal: dynamicSize(30),
   },
   imageContainer: {
     justifyContent: 'center',
@@ -42,6 +45,7 @@ export const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     justifyContent: 'center',
+    marginVertical: dynamicSize(20),
   },
   doYouHave: {
     color: colors.mauve,

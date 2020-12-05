@@ -28,7 +28,7 @@ export default function SignupScreen({navigation}) {
       <StatusBar />
       <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-          <View style={styles.container}>
+          <View style={[styles.container, styles.paddingHorizontal]}>
             <Header title="Sign Up" />
             <View style={styles.imageContainer}>
               <Image source={signUpIllustration} />
