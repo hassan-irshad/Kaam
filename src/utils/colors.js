@@ -6,4 +6,6 @@ export const colors = {
   greenSponge: '#20c3af',
   mauve: '#838391',
   orange: '#ffb19d',
+  grey: '#cbd3d5',
+  darkGrey: '#b5c3c7',
 };

@@ -1,6 +1,6 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import {colors} from '../../utils/colors';
-import {getFontSize} from '../../utils/dimension.style';
+import {dynamicSize, getFontSize} from '../../utils/dimension.style';
 import {fonts} from '../../utils/font';
 const {width} = Dimensions.get('window');
 
@@ -10,7 +10,8 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   sliderContainer: {
-    height: '85%',
+    marginTop: dynamicSize(60),
+    height: '75%',
   },
   heading: {
     fontFamily: fonts.ubuntuMedium,
@@ -28,5 +29,21 @@ export const styles = StyleSheet.create({
     fontSize: getFontSize(16),
     color: colors.mauve,
     textAlign: 'center',
+  },
+  slideIndicator: {
+    width: dynamicSize(8),
+    height: dynamicSize(8),
+    backgroundColor: colors.grey,
+    borderRadius: dynamicSize(60),
+    marginRight: dynamicSize(10),
+  },
+  indicatorsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: dynamicSize(47),
+  },
+  activeIndicator: {
+    backgroundColor: colors.darkGrey,
+    width: dynamicSize(17),
   },
 });
