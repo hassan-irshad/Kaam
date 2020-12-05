@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {
   View,
   Text,
@@ -14,10 +14,16 @@ import screen1Image from '../../assets/images/introScreen1/illustration.png';
 import screen2Image from '../../assets/images/introScreen2/illustration.png';
 import screen3Image from '../../assets/images/introScreen3/illustration.png';
 import {enableAnimation, animate} from '../../utils/animations';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import RouteNames from '../../RouteNames';
 
-export default function IntroScreen() {
-  let [sliderState, setSliderState] = useState({currentPage: 0});
+export default function IntroScreen({navigation}) {
+  let [sliderState, setSliderState] = useState({
+    currentPage: 0,
+  });
   const {width} = Dimensions.get('window');
+  let scrollViewRef = useRef();
+  const {currentPage} = sliderState;
 
   useEffect(() => {
     enableAnimation();
@@ -25,9 +31,9 @@ export default function IntroScreen() {
 
   const setSliderPage = (event) => {
     animate();
-    const {currentPage} = sliderState;
     const {x} = event.nativeEvent.contentOffset;
-    const indexOfNextScreen = Math.floor(x / width);
+
+    const indexOfNextScreen = Math.ceil(x / width);
     if (indexOfNextScreen !== currentPage) {
       setSliderState({
         ...sliderState,
@@ -36,18 +42,29 @@ export default function IntroScreen() {
     }
   };
 
-  const {currentPage} = sliderState;
+  const onPressNext = () => {
+    if (currentPage === 2) {
+      navigation.navigate(RouteNames.SigninScreen);
+      return;
+    }
+    scrollViewRef.current.scrollTo({x: width * (currentPage + 1), y: 0});
+  };
+
   return (
     <>
       <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
       <SafeAreaView style={styles.container}>
         <View style={styles.sliderContainer}>
           <ScrollView
+            ref={scrollViewRef}
             horizontal={true}
             scrollEventThrottle={16}
             pagingEnabled={true}
             showsHorizontalScrollIndicator={false}
-            onScroll={setSliderPage}>
+            // onScroll={setSliderPage}>
+            onScroll={(event) => {
+              setSliderPage(event);
+            }}>
             <View style={styles.slide}>
               <Text style={styles.heading}>Proven{'\n'}specalists</Text>
               <Image source={screen1Image} />
@@ -91,6 +108,9 @@ export default function IntroScreen() {
             />
           </View>
         </View>
+        <TouchableOpacity style={styles.nextButton} onPress={onPressNext}>
+          <Text style={styles.nextButtonText}>Next</Text>
+        </TouchableOpacity>
       </SafeAreaView>
     </>
   );

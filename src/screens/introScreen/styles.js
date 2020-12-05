@@ -8,10 +8,11 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+    justifyContent: 'space-between',
   },
   sliderContainer: {
-    marginTop: dynamicSize(60),
-    height: '75%',
+    marginTop: dynamicSize(30),
+    height: '80%',
   },
   heading: {
     fontFamily: fonts.ubuntuMedium,
@@ -45,5 +46,20 @@ export const styles = StyleSheet.create({
   activeIndicator: {
     backgroundColor: colors.darkGrey,
     width: dynamicSize(17),
+  },
+  nextButton: {
+    backgroundColor: colors.greenSponge,
+    height: dynamicSize(60),
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: dynamicSize(30),
+    marginBottom: dynamicSize(10),
+    // marginTop: dynamicSize(10),
+  },
+  nextButtonText: {
+    fontFamily: fonts.jostSemiBold,
+    color: colors.white,
+    letterSpacing: dynamicSize(0.4),
+    fontSize: getFontSize(16),
   },
 });
